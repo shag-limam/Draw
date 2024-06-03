@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '*/5 * * * *'  # Runs daily at midnight
+    - cron: '0 */3 * * *'  # Runs daily at midnight
 
 jobs:
   commit:
@@ -23,5 +23,5 @@ jobs:
     - name: Commit and push changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: "Automated commit"
+        commit_message: "commit 0 */3 * * *"
         branch: main
