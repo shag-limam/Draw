@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 */3 * * *'  # Runs daily at midnight
+    - cron: '0 */6 * * *'  # Runs daily at midnight
 
 jobs:
   commit:
