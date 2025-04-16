@@ -1,11 +1,11 @@
-name: Test comment automatiser les commits sur GitHub
+name: Test commit automatique journalier
 
 on:
   push:
     branches:
       - main
   schedule:
-    - cron: '0 */6 * * *'  # Runs daily at midnight
+    - cron: '0 0 * * *'  # Tous les jours à minuit
 
 jobs:
   commit:
@@ -17,11 +17,10 @@ jobs:
 
     - name: Make changes
       run: |
-        # Your script or commands to modify files
-        echo "Some changes" >> file.txt
+        echo "Mise à jour automatique le $(date)" >> file.txt
 
     - name: Commit and push changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: "commit 0 */3 * * *"
+        commit_message: "Auto-commit: mise à jour quotidienne"
         branch: main
